@@ -1,21 +1,14 @@
-let money = 10000,
-    income = "преподавание",
-    addExpenses = "Тренажерный зал, Спортивное питание, Досуг",
-    deposit = false,
-    mission = 60000,
-    period = 12;
-    
-console.log('money: ', typeof money);
-console.log('income: ', typeof income);
-console.log('deposit: ', typeof deposit);
+let num = 266219;
+let numbers = num.toString().split('');
 
-console.log('addExpenses: ', addExpenses.length);
+let composition = numbers.reduce(function(number, current) {
+  return +number * +current;
+});
 
-console.log('Период равен ' + period + ' месяцев');
-console.log('Цель заработать ' + mission + ' рублей');
+console.log('Произведение чисел: ', composition);
 
-console.log(addExpenses.toLowerCase().split(', '));
+let degree = composition ** 3;
 
-let budgetDay = money / 30;
+console.log('3-я степень: ', degree);
 
-console.log('budgetDay: ', budgetDay);
+console.log('Степень:', String(degree).substring(0, 2));
