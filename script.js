@@ -29,3 +29,8 @@ switch (lang) {
 }
 
 console.log(messages[lang] + ': ', days[lang]);
+
+let namePerson = 'Артем';
+
+console.log(namePerson == 'Артем' ? 'Директор' : 'Студент');
+console.log(namePerson == 'Максим' ? 'Преподаватель' : 'Студент');
