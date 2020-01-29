@@ -9,7 +9,7 @@ let days = {
 
 let messages = {
   ru: 'Дни недели: ',
-  en: 'Days of week'
+  en: 'Days of week: '
 };
 
 if (lang == 'ru') {
