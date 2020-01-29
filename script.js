@@ -1,36 +1,19 @@
 'use strict';
 
-let lang = 'ru';
+let noticeUser = function(variableType) {
+  if (!isNaN(variableType)) {
+    return false;
+  }
 
-let days = {
-  ru: 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье',
-  en: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
-};
+  console.log(variableType.trim());
 
-let messages = {
-  ru: 'Дни недели: ',
-  en: 'Days of week: '
-};
+  if (variableType.length > 30) {
+    console.log(variableType.substring(0, 30) + '...');
+  }
 
-if (lang == 'ru') {
-  console.log('Дни недели: ', days[lang]);
+  return true;
 }
 
-if (lang == 'en') {
-  console.log('Days of week: ', days[lang]);
+if (!noticeUser(prompt('Введите строку'))) {
+  alert('Вы передали не строку.');
 }
-
-switch (lang) {
-  case 'ru':
-    console.log('Дни недели: ', days[lang]);
-    break;
-  case 'en':
-    console.log('Days of week: ', days[lang]);
-}
-
-console.log(messages[lang] + ': ', days[lang]);
-
-let namePerson = 'Артем';
-
-console.log(namePerson == 'Артем' ? 'Директор' : 'Студент');
-console.log(namePerson == 'Максим' ? 'Преподаватель' : 'Студент');
