@@ -1,14 +1,31 @@
-let num = 266219;
-let numbers = num.toString().split('');
+'use strict';
 
-let composition = numbers.reduce(function(number, current) {
-  return +number * +current;
-});
+let lang = 'ru';
 
-console.log('Произведение чисел: ', composition);
+let days = {
+  ru: 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье',
+  en: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
+};
 
-let degree = composition ** 3;
+let messages = {
+  ru: 'Дни недели: ',
+  en: 'Days of week'
+};
 
-console.log('3-я степень: ', degree);
+if (lang == 'ru') {
+  console.log('Дни недели: ', days[lang]);
+}
 
-console.log('Степень:', String(degree).substring(0, 2));
+if (lang == 'en') {
+  console.log('Days of week: ', days[lang]);
+}
+
+switch (lang) {
+  case 'ru':
+    console.log('Дни недели: ', days[lang]);
+    break;
+  case 'en':
+    console.log('Days of week: ', days[lang]);
+}
+
+console.log(messages[lang] + ': ', days[lang]);
