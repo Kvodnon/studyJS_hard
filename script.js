@@ -12,11 +12,11 @@ let messages = {
   en: 'Days of week: '
 };
 
-if (lang == 'ru') {
+if (lang === 'ru') {
   console.log('Дни недели: ', days[lang]);
 }
 
-if (lang == 'en') {
+if (lang === 'en') {
   console.log('Days of week: ', days[lang]);
 }
 
@@ -28,9 +28,8 @@ switch (lang) {
     console.log('Days of week: ', days[lang]);
 }
 
-console.log(messages[lang] + ': ', days[lang]);
+console.log(messages[lang], days[lang]);
 
-let namePerson = 'Артем';
+let namePerson = 'Максим';
 
-console.log(namePerson == 'Артем' ? 'Директор' : 'Студент');
-console.log(namePerson == 'Максим' ? 'Преподаватель' : 'Студент');
+console.log(namePerson === 'Артем' ? 'Директор' : namePerson === "Максим" ? 'Преподаватель' : 'Студент');
