@@ -19,7 +19,7 @@ let getDay = function(counter, type) {
     day.innerText = week[counter];
 
     return day;
-}
+};
 
 for (let counter = 0; counter < week.length; counter++) {
     let par = document.createElement('p');
