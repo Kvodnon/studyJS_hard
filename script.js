@@ -14,6 +14,8 @@ let date = new Date();
 
 let div = document.createElement('div');
 
+let today = date.getDay() - 1;
+
 let getDay = function(counter, type) {
     let day = document.createElement(type);
     day.innerText = week[counter];
@@ -30,8 +32,14 @@ for (let counter = 0; counter < week.length; counter++) {
         day = getDay(counter, 'em');
     } 
     
-    if (counter === (date.getDay() - 1)) {
+    if (counter === today) {
         day = getDay(counter, 'strong');
+    }
+
+    if (counter === today && counter === 5 || counter === 6) {
+        let em = document.createElement('em');
+        em.append(day);
+        day = em;
     }
 
     par.append(day);
