@@ -1,35 +1,42 @@
 'use strict';
 
-let lang = 'ru';
+let week = [
+    'Понедельник',
+    'Вторник',
+    'Среда',
+    'Четверг',
+    'Пятница',
+    'Суббота',
+    'Воскресенье'
+];
 
-let days = {
-  ru: 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье',
-  en: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
-};
+let date = new Date();
 
-let messages = {
-  ru: 'Дни недели: ',
-  en: 'Days of week: '
-};
+let div = document.createElement('div');
 
-if (lang === 'ru') {
-  console.log('Дни недели: ', days[lang]);
+let getDay = function(counter, type) {
+    let day = document.createElement(type);
+    day.innerText = week[counter];
+
+    return day;
 }
 
-if (lang === 'en') {
-  console.log('Days of week: ', days[lang]);
+for (let counter = 0; counter < week.length; counter++) {
+    let par = document.createElement('p');
+
+    let day = week[counter];
+
+    if (counter === 5 || counter === 6) {
+        day = getDay(counter, 'em');
+    } 
+    
+    if (counter === (date.getDay() - 1)) {
+        day = getDay(counter, 'strong');
+    }
+
+    par.append(day);
+
+    div.append(par);
 }
 
-switch (lang) {
-  case 'ru':
-    console.log('Дни недели: ', days[lang]);
-    break;
-  case 'en':
-    console.log('Days of week: ', days[lang]);
-}
-
-console.log(messages[lang], days[lang]);
-
-let namePerson = 'Максим';
-
-console.log(namePerson === 'Артем' ? 'Директор' : namePerson === "Максим" ? 'Преподаватель' : 'Студент');
+document.body.append(div);
